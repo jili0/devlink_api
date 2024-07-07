@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import e from "express";
 import cors from "cors";
 import linkRoute from "./routes/link.route.js";
+import noteRoute from "./routes/note.route.js";
 import "dotenv/config";
 
 const connectionString = process.env.connectionStr;
@@ -16,6 +17,7 @@ app.use(cors());
 
 //routes
 app.use("/links", linkRoute);
+app.use("/notes", noteRoute);
 
 //connection
 const connectDB = async () => {
